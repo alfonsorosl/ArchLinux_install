@@ -41,8 +41,11 @@ Next you will partition your disk, check what disks your system has available wi
 ```sh
 # fdisk -l
 ```
-    You may ignore "rom" refers to read-only memory, "loop" devices are virtual block devices used for mounting files as if they were physical disks, and "airootfs" is a temporary root file system used during the installation of Arch Linux.
-    For mmcblk devices you may ignore "rpmb" is a small partition that can only be accessed via a trusted mechanism. It is used for secure storage, "boot0" and "boot1" are hardware partitions used for the boot process.
+<details>
+  <summary>Ignore rom, loop or airootfs - rpmb, boot0 and boot1</summary>
+  <p>You may ignore "rom" refers to read-only memory, "loop" devices are virtual block devices used for mounting files as if they were physical disks, and "airootfs" is a temporary root file system used during the installation of Arch Linux.</p>
+  <p>For mmcblk devices you may ignore "rpmb" is a small partition that can only be accessed via a trusted mechanism. It is used for secure storage, "boot0" and "boot1" are hardware partitions used for the boot process.</p>
+</details>
 
 To partition we need to choose a configuration MBR or GPT. 
 - **MBR** usually used in BIOS systems
@@ -74,3 +77,4 @@ And mount the disk partitions using each command accordingly:
 # mount --mkdir /dev/sdaX /mnt/boot
 # swapon /dev/sdaX
 ```
+> **WARNING**: *Only format the EFI system partition if you created it during the partitioning step. If there already was an EFI system partition on disk beforehand, reformatting it can destroy the boot loaders of other installed operating systems.*
