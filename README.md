@@ -70,6 +70,7 @@ After partitioning the disk you will format all disk partitions using each comma
 # mkswap /dev/sdaX
 # mkfs.fat -F 32 /dev/sdaX
 ```
+> **WARNING**: *Only format the EFI system partition if you created it during the partitioning step. If there already was an EFI system partition on disk beforehand, reformatting it can destroy the boot loaders of other installed operating systems.*
 
 And mount the disk partitions using each command accordingly:
 ```sh
@@ -77,4 +78,3 @@ And mount the disk partitions using each command accordingly:
 # mount --mkdir /dev/sdaX /mnt/boot
 # swapon /dev/sdaX
 ```
-> **WARNING**: *Only format the EFI system partition if you created it during the partitioning step. If there already was an EFI system partition on disk beforehand, reformatting it can destroy the boot loaders of other installed operating systems.*
