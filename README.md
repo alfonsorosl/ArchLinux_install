@@ -108,3 +108,5 @@ sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc
 ```
 
 - ### Install essential packages
+> **NOTE**: No software or configuration (except for `/etc/pacman.d/mirrorlist`) gets carried over from the live environment to the installed system. Therefore is essential to install packages to start with a functional base system
+
