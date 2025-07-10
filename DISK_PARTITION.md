@@ -26,6 +26,7 @@ or to check current disk partitions besides the disk name:
 # lsblk
 ```
 
+### Create disk partitions
 <details>
   <summary>To create GPT partitions you will use the gdisk utility</summary>
   <p>gdisk is a disk management utility that allows users to create, manage, and delete standard GPT (GUID Partition Table) Unlike fdisk, which creates only MBR (Master Boot Record) partitions, gdisk creates only GPT partitions. GPT is the modern partitioning standard that supports larger disks and more partitions compared to MBR.</p>
@@ -114,3 +115,34 @@ Type `8300` and press `enter` to create another Ext4 partition
 <p>_</p>
 
 To see the partitions you've created, type `p` and press `enter`
+
+### Format disk partitions
+After partitioning the disk you will format all disk partitions using each command accordingly:
+
+|Use | For |
+---------|----------------
+|`mkfs.fat -F 32` | /boot/efi |
+|`mkswap` | SWAP |
+|`mkfs.ext4` | "/" and "/home" |
+
+```sh
+# mkfs.fat -F 32 /dev/yourpartitionname
+# mkswap /dev/yourpartitionname
+# mkfs.ext4 /dev/yourpartitionname
+```
+> **WARNING**: *Only format the EFI system partition if you created it during the partitioning step. If there already was an EFI system partition on disk beforehand, reformatting it can destroy the boot loaders of other installed operating systems.*
+
+### Format disk partitions
+And mount the disk partitions using each command accordingly:
+
+|Use | For |
+---------|----------------
+|`mount --mkdir`, `/mnt/boot` | /boot/efi |
+|`swapon` | SWAP |
+|`mount`, `/mnt` | "/" and "/home" |
+
+```sh
+# mount --mkdir /dev/yourpartitionname /mnt/boot
+# swapon /dev/yourpartitionname
+# mount /dev/yourpartitionname /mnt
+```
