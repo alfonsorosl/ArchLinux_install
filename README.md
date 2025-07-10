@@ -64,6 +64,6 @@ To partition we need to choose a configuration MBR or GPT.
 |[SWAP] |Linux Swap |6GiB |Swap Space: Used for virtual memory when RAM is full or for hibernation |Swap |
 |/home |Ext4 |Remainder of disk |Home Partition: Stores user files, configurations, and documents |None |
 
-After partitioning and mounting the newly created partitions you are ready to continue to the next step.
+After formating and mounting the newly created partitions you are ready to continue to the next step.
 
 ## PACKAGE INSTALL
