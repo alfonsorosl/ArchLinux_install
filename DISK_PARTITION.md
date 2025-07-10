@@ -54,9 +54,9 @@ Press `enter` to accept the default partition number or write your preferred num
 
 Press `enter` to accept the default first sector of disk and
 
-Write `+512MiB` and press `enter` to set the last sector
+Write `# +512MiB` and press `enter` to set the last sector
 
-Type `EF00` and press `enter`. This is the specific GUID for an EFI System Partition
+Type `# EF00` and press `enter`. This is the specific GUID for an EFI System Partition
 
 
 <details>
@@ -76,9 +76,9 @@ Press `enter` to accept the default partition number or write your preferred num
 
 Press `enter` to accept the default first sector of disk and
 
-Write `+4GiB` and press `enter` to set the last sector. (Adjust size based on your RAM; typically RAM size or double RAM for hibernation)
+Write `# +4GiB` and press `enter` to set the last sector. (Adjust size based on your RAM; typically RAM size or double RAM for hibernation)
 
-Type `8200` and press `enter`. This is the GUID for a Linux swap partition
+Type `# 8200` and press `enter`. This is the GUID for a Linux swap partition
 
 
 <details>
@@ -92,9 +92,9 @@ Press `enter` to accept the default partition number or write your preferred num
 
 Press `enter` to accept the default first sector of disk and
 
-Write `+40GiB` and press `enter` to set the last sector. (You can choose `+20GiB` for minimal, or more like `+50GiB` for more software. Adjust as needed.)
+Write `# +40GiB` and press `enter` to set the last sector. (You can choose `+20GiB` for minimal, or more like `+50GiB` for more software. Adjust as needed.)
 
-Type `8300` and press `enter`. This is the GUID for a Linux filesystem partition (Ext4)
+Type `# 8300` and press `enter`. This is the GUID for a Linux filesystem partition (Ext4)
 
 
 <details>
@@ -110,11 +110,11 @@ Press `enter` to accept the default first sector of disk and
 
 Just press `enter` to use the remainder of the disk for your home partition
 
-Type `8300` and press `enter` to create another Ext4 partition
+Type `# 8300` and press `enter` to create another Ext4 partition
 
 <p>_</p>
 
-To see the partitions you've created, type `p` and press `enter`
+To see the partitions you've created, type `# p` and press `enter`
 
 ### Format disk partitions
 After partitioning the disk you will format all disk partitions using each command accordingly:
