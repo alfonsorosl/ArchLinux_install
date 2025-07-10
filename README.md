@@ -85,3 +85,26 @@ To partition we need to choose a configuration MBR or GPT.
 After formating and mounting the newly created partitions you are ready to continue to the next step.
 
 ## PACKAGE INSTALL
+- ### Select mirrors
+
+Mirrors are servers replicating the repositories from ArchLinux. These mirrors help reduce load on the main server and provide faster access for users based on their location. You can check the current mirror list with the commad `# cat` or `# less` e.g:
+```sh
+# cat /etc/pacman.d/mirrorlist
+```
+<details>
+  <summary>Tip</summary>
+
+ To exit command `# less` type `# q`
+ </details>
+
+You can update the list of mirrors to optimize download speed. To change the mirror servers, you can either manually edit the `/etc/pacman.d/mirrorlist` file using `# nano` or `# vim` or use a tool like `reflector` as follows:
+```sh
+sudo reflector --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+```
+This command selects the 10 most recently synchronized HTTPS mirrors, sorts them by download speed, and saves the result to the mirror list file
+If you want to limit the mirrors to specific countries, you can use the `--country` option:
+```sh
+sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+```
+
+- ### Install essential packages
