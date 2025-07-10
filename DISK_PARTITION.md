@@ -116,6 +116,10 @@ Type `# 8300` and press `enter` to create another Ext4 partition
 
 To see the partitions you've created, type `# p` and press `enter`
 
+If the partitions are correct exit the gdisk prompt `# w` and `# y` to exit and save gdisk configuration
+
+You can check again your disk partitions names with the command `# lsblk` or `# fdisk-l`
+
 ### Format disk partitions
 After partitioning the disk you will format all disk partitions using each command accordingly:
 
