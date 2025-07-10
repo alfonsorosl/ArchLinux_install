@@ -56,7 +56,7 @@ To partition we need to choose a configuration MBR or GPT.
   - Stores robust partition data with redundancy (copies at both ends of the disk), supporting virtually unlimited partitions and disks of massive sizes (beyond 2 TB)
   - It uses globally unique identifiers (GUIDs) for partitions and stores direct pointers to UEFI bootloader files on a dedicated EFI System Partition (ESP)
 
-🔸**SCRIPT FOLLOW THIS GUIDE to setup a GPT layout with the following partitions:**
+🔸**[FOLLOW THIS GUIDE to setup a GPT layout with the following partitions:](DISK_PARTITION.MD)**
 | MOUNT POINT | FILE SYSTEM | SIZE | PURPOSE | ATTRIBUTES |
 | ------------|-------------|------|---------|------------|
 |/boot/efi |FAT32 |500MiB |EFI System Partition (ESP): Stores UEFI bootloaders and kernel images|boot, esp|
