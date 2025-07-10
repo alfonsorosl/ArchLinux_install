@@ -64,17 +64,6 @@ To partition we need to choose a configuration MBR or GPT.
 |[SWAP] |Linux Swap |6GiB |Swap Space: Used for virtual memory when RAM is full or for hibernation |Swap |
 |/home |Ext4 |Remainder of disk |Home Partition: Stores user files, configurations, and documents |None |
 
-After partitioning the disk you will format all disk partitions using each command accordingly:
-```sh
-# mkfs.ext4 /dev/sdaX
-# mkswap /dev/sdaX
-# mkfs.fat -F 32 /dev/sdaX
-```
-> **WARNING**: *Only format the EFI system partition if you created it during the partitioning step. If there already was an EFI system partition on disk beforehand, reformatting it can destroy the boot loaders of other installed operating systems.*
+After partitioning and mounting the newly created partitions you are ready to continue to the next step.
 
-And mount the disk partitions using each command accordingly:
-```sh
-# mount /dev/sdaX /mnt
-# mount --mkdir /dev/sdaX /mnt/boot
-# swapon /dev/sdaX
-```
+## PACKAGE INSTALL
