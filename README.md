@@ -30,10 +30,28 @@ You will setup Arch now:
   - Ethernet > plug the cable and check connection with ping
   - Wifi > 🔸follow instructions to authenticate wireless network with iwctl https://wiki.archlinux.org/title/Iwctl
 
-Now you are connected to the internet your system should synchronize its clock, verify that it is correct entering into the console:
+Now you are connected to the internet your system should synchronize its clock automatically, systemd-timesyncd is enabled by default, verify that it is correct entering into the console:
 ```sh
 # timedatectl
 ```
+Make sure that the system clock is synchronized and the NTP service is active, this will ensure that your system maintains an accurate time and date. You can also setup your timezone in this step:
+<details>
+  <summary>Set your system timezone</summary>
+You can see the list of timezones available with the following command:
+ 
+ ```sh
+# timedatectl list-timezones
+```
+Timezones are generally listed as `Continent/City` or `Country` or timezone abbreviations e.g: `GMT` you can filter the timezones you are looking for with the command:
+```sh
+# timedatectl list-timezones | grep Continent
+``` 
+to set the timezone use the command:
+```sh
+# timedatectl set-timezone Continent/City
+```
+  </p>
+</details>
 
 - ### Partition the disk
 
