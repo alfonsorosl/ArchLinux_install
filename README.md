@@ -101,7 +101,7 @@ You can update the list of mirrors to optimize download speed. To change the mir
 ```sh
 sudo reflector --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 ```
-This command selects the 10 most recently synchronized HTTPS mirrors, sorts them by download speed, and saves the result to the mirror list file
+The previous command selects the 10 most recently synchronized HTTPS mirrors, sorts them by download speed, and saves the result to the mirror list file.
 If you want to limit the mirrors to specific countries, you can use the `--country` option:
 ```sh
 sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
