@@ -34,24 +34,7 @@ Now you are connected to the internet your system should synchronize its clock a
 ```sh
 # timedatectl
 ```
-Make sure that the system clock is synchronized and the NTP service is active, this will ensure that your system maintains an accurate time and date. You can also setup your timezone in this step:
-<details>
-  <summary>Set your system timezone</summary>
-You can see the list of timezones available with the following command:
- 
- ```sh
-# timedatectl list-timezones
-```
-Timezones are generally listed as `Continent/City` or `Country` or timezone abbreviations e.g: `GMT` you can filter the timezones you are looking for with the command:
-```sh
-# timedatectl list-timezones | grep Continent
-``` 
-to set the timezone use the command:
-```sh
-# timedatectl set-timezone Continent/City
-```
-  </p>
-</details>
+Make sure that the system clock is synchronized and the NTP service is active, this will ensure that your system maintains an accurate time and date. You will setup your timezone later during the system configuration:
 
 - ### Partition the disk
 
@@ -132,8 +115,7 @@ Install the previously mentioned packages using the following command:
 ```
 
 ## CONFIGURE THE SYSTEM
-- ### fstab
-
+- ### Generate Fstab
 To get needed file systems (like the one used for the boot directory /boot) mounted on startup, generate an fstab (File System Table) file. This step mounts your file systems when your system boots
 ```sh
 # genfstab -U /mnt >> /mnt/etc/fstab
@@ -145,5 +127,38 @@ and open the `fstab` to check all partitions are listed
 <details>
   <summary>If any of your partitions are missing</summary>
 
- It could be due to the order in which you mounted the partitions during the installation process. To resolve this, ensure that you mount the root partition first, then the other partitions. Visit the [Disk Partition Guide](DISK_PARTITION.md#mount-disk-partitions) to follow the steps to mount partitions again in right order and then redo the generate fstab step
+ It could be due to the order in which you mounted the partitions during the installation process. To resolve this, ensure that you mount the root partition first, then the other partitions. Visit the [Disk Partition Guide](DISK_PARTITION.md#mount-disk-partitions) to follow the steps to mount partitions again in right order and then redo the [Generate Fstab](README.md#generate-fstab) step
  </details>
+
+- ### Chroot into the New System
+To directly interact with the new system's environment, tools, and configurations for the next steps as if you were booted into it, change root into the new system
+```sh
+# arch-chroot /mnt
+```
+- ### Set Time Zone
+Set your time zone
+```sh
+# ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+```
+Then run `hwclock` to generate `/etc/adjtime`
+```sh
+# hwclock --systohc
+```
+This command assumes the hardware clock is set to UTC. Use the command `# timedatectl` to check
+<details>
+  <summary>If your hardware clock is not set to UTC follow this steps to change</summary>
+You can see the list of timezones available with the following command:
+ 
+ ```sh
+# timedatectl list-timezones
+```
+Timezones are generally listed as `Continent/City` or `Country` or timezone abbreviations e.g: `GMT` you can filter the timezones you are looking for with the command:
+```sh
+# timedatectl list-timezones | grep abbreviation
+``` 
+to set the timezone to UTC use the command:
+```sh
+# timedatectl set-timezone UTC
+```
+  </p>
+</details>
