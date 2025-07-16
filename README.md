@@ -113,11 +113,23 @@ sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc
 There will be a minimum of packages that will be required to have a working system, the recommended packages in the [ArchWiki](https://wiki.archlinux.org/title/Installation_guide#Install_essential_packages) are base, linux, and linux-firmware:
 
 - base: Is a package group that provides the fundamental command-line utilities, you can check the list of packages included [here](https://archlinux.org/packages/core/any/base/)
-
 - linux: Is the generic Linux kernel
-
 - linux-firmware: Contains essential binary firmware blobs for various hardware, including many Wi-Fi cards, GPUs, and other devices. This is crucial for getting many components working, especially Wi-Fi
 
 Additionally these packages can also be considered essential for the system to work from the start: network-manager, grub, nano, and sudo:
 
-base, linux, linux-firmware, network-manager, grub, nano, ¿sudo?
+- network-manager: Provides detection and configuration for systems to automatically connect to networks, supporting both wireless and wired networks
+- grub: (Grand Unified Bootloader) It allows users to select a default operating system, set a background image, and control the boot process
+- nano: Is a text editor used for editing files in the terminal
+- sudo: Is a command-line utility that allows users to run programs with the security privileges of another user, typically the root user
+
+Depending on your hardware you may need additional drivers for your system to recognize and function correctly with the hardware, make sure to check your hardware specifications and check wether it requires additional drivers or firmware not included in `linux-firmware` for example; for hardware bug and security fixes for your cpu you may need to install a microcode updates firmware like `amd-ucode` or `intel-ucode`
+
+Install the previously mentioned packages using the following command:
+
+```sh
+pacstrap -K /mnt base linux linux-firmware networkmanager grub nano sudo
+```
+
+## CONFIGURE THE SYSTEM
+- ### fstab
