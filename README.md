@@ -99,12 +99,12 @@ Mirrors are servers replicating the repositories from ArchLinux. These mirrors h
 
 You can update the list of mirrors to optimize download speed. To change the mirror servers, you can either manually edit the `/etc/pacman.d/mirrorlist` file using `# nano` or `# vim` or use a tool like `reflector` as follows:
 ```sh
-sudo reflector --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+# sudo reflector --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 The previous command selects the 10 most recently synchronized HTTPS mirrors, sorts them by download speed, and saves the result to the mirror list file.
 If you want to limit the mirrors to specific countries, you can use the `--country` option:
 ```sh
-sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+# sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 - ### Install essential packages
@@ -128,7 +128,7 @@ Depending on your hardware you may need additional drivers for your system to re
 Install the previously mentioned packages using the following command:
 
 ```sh
-pacstrap -K /mnt base linux linux-firmware networkmanager grub nano sudo
+# pacstrap -K /mnt base linux linux-firmware networkmanager grub nano sudo
 ```
 
 ## CONFIGURE THE SYSTEM
