@@ -145,5 +145,5 @@ and open the `fstab` to check all partitions are listed
 <details>
   <summary>If any of your partitions are missing</summary>
 
- It could be due to the order in which you mounted the partitions during the installation process. To resolve this, ensure that you mount the root partition first, then the other partitions. Visit the [Disk Partition Guide](DISK_PARTITION.md#Mount) to follow the steps to mount partitions again in right order and then redo the generate fstab step
+ It could be due to the order in which you mounted the partitions during the installation process. To resolve this, ensure that you mount the root partition first, then the other partitions. Visit the [Disk Partition Guide](DISK_PARTITION.md#mount-disk-partitions) to follow the steps to mount partitions again in right order and then redo the generate fstab step
  </details>
