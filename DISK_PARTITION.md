@@ -125,14 +125,14 @@ After partitioning the disk you will format all disk partitions using each comma
 
 |Use | For |
 ---------|----------------
-|`mkfs.fat -F 32` | /boot/efi |
-|`mkswap` | SWAP |
 |`mkfs.ext4` | "/" and "/home" |
+|`mkswap` | SWAP |
+|`mkfs.fat -F 32` | /boot/efi |
 
 ```sh
-# mkfs.fat -F 32 /dev/yourpartitionname
-# mkswap /dev/yourpartitionname
 # mkfs.ext4 /dev/yourpartitionname
+# mkswap /dev/yourpartitionname
+# mkfs.fat -F 32 /dev/yourpartitionname
 ```
 > **WARNING**: *Only format the EFI system partition if you created it during the partitioning step. If there already was an EFI system partition on disk beforehand, reformatting it can destroy the boot loaders of other installed operating systems.*
 
@@ -141,12 +141,12 @@ And mount the disk partitions using each command accordingly:
 
 |Use | For |
 ---------|----------------
-|`mount --mkdir`, `/mnt/boot` | /boot/efi |
-|`swapon` | SWAP |
 |`mount`, `/mnt` | "/" and "/home" |
+|`swapon` | SWAP |
+|`mount --mkdir`, `/mnt/boot` | /boot/efi |
 
 ```sh
-# mount --mkdir /dev/yourpartitionname /mnt/boot
-# swapon /dev/yourpartitionname
 # mount /dev/yourpartitionname /mnt
+# swapon /dev/yourpartitionname
+# mount --mkdir /dev/yourpartitionname /mnt/boot
 ```
