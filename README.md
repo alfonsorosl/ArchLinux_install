@@ -133,3 +133,17 @@ Install the previously mentioned packages using the following command:
 
 ## CONFIGURE THE SYSTEM
 - ### fstab
+
+To get needed file systems (like the one used for the boot directory /boot) mounted on startup, generate an fstab (File System Table) file. This step mounts your file systems when your system boots
+```sh
+# genfstab -U /mnt >> /mnt/etc/fstab
+```
+and open the `fstab` to check all partitions are listed
+```sh
+# nano /mnt/etc/fstab
+```
+<details>
+  <summary>If any of your partitions are missing</summary>
+
+ It could be due to the order in which you mounted the partitions during the installation process. To resolve this, ensure that you mount the root partition first, then the other partitions. Visit the [Disk Partition Guide](DISK_PARTITION.md#Mount) to follow the steps to mount partitions again in right order and then redo the generate fstab step
+ </details>
