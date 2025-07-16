@@ -110,4 +110,14 @@ sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc
 - ### Install essential packages
 > **NOTE**: No software or configuration (except for `/etc/pacman.d/mirrorlist`) gets carried over from the live environment to the installed system. Therefore is essential to install packages to start with a functional base system
 
-base, linux, linux-firmware, network-manager, grub, ¿sudo?
+There will be a minimum of packages that will be required to have a working system, the recommended packages in the [ArchWiki](https://wiki.archlinux.org/title/Installation_guide#Install_essential_packages) are base, linux, and linux-firmware:
+
+- base: Is a package group that provides the fundamental command-line utilities, you can check the list of packages included [here](https://archlinux.org/packages/core/any/base/)
+
+- linux: Is the generic Linux kernel
+
+- linux-firmware: Contains essential binary firmware blobs for various hardware, including many Wi-Fi cards, GPUs, and other devices. This is crucial for getting many components working, especially Wi-Fi
+
+Additionally these packages can also be considered essential for the system to work from the start: network-manager, grub, nano, and sudo:
+
+base, linux, linux-firmware, network-manager, grub, nano, ¿sudo?
