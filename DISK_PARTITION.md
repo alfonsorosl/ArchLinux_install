@@ -131,6 +131,7 @@ After partitioning the disk you will format all disk partitions using each comma
 
 ```sh
 # mkfs.ext4 /dev/yourpartitionname
+# mkfs.ext4 /dev/yourpartitionname
 # mkswap /dev/yourpartitionname
 # mkfs.fat -F 32 /dev/yourpartitionname
 ```
@@ -146,6 +147,7 @@ And mount the disk partitions using each command accordingly:
 |`mount --mkdir`, `/mnt/boot` | /boot/efi |
 
 ```sh
+# mount /dev/yourpartitionname /mnt
 # mount /dev/yourpartitionname /mnt
 # swapon /dev/yourpartitionname
 # mount --mkdir /dev/yourpartitionname /mnt/boot
