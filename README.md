@@ -135,6 +135,8 @@ To directly interact with the new system's environment, tools, and configuration
 ```sh
 # arch-chroot /mnt
 ```
+you can exit the environment type `exit` you can jump back and forth between the installation environment and your new system
+
 - ### Set Time Zone
 Set your time zone
 ```sh
