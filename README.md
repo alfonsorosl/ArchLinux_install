@@ -245,4 +245,10 @@ Next generate the GRUB configuration file
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-- ### 
+- ### Create user and password
+
+- ### Enable sudo
+
+- ### Enable NetworkManager
+
+- ### reboot-poweroff recommendations
