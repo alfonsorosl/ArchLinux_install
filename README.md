@@ -108,7 +108,7 @@ Additionally these packages can also be considered essential for the system to w
 
 Depending on your hardware you may need additional drivers for your system to recognize and function correctly with the hardware, make sure to check your hardware specifications and check wether it requires additional drivers or firmware not included in `linux-firmware` for example; for hardware bug and security fixes for your cpu you may need to install a microcode updates firmware like `amd-ucode` or `intel-ucode`
 
-Install the previously mentioned packages using the following command:
+Install the previously mentioned packages using the following command: [INSTALL ONLY BASE LINUX AND LINUX FIRMWARE, touch later on other packages]
 
 ```sh
 # pacstrap -K /mnt base linux linux-firmware networkmanager grub nano sudo
