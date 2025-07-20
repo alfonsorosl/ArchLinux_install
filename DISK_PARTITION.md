@@ -142,12 +142,12 @@ And mount the disk partitions using each command accordingly:
 
 |Use | For |
 ---------|----------------
-|`mount`, `/mnt` | "/" and "/home" |
+|`mount`, `/mnt`, `/mnt/home`| "/" and "/home" |
 |`swapon` | SWAP |
 |`mount --mkdir`, `/mnt/boot` | /boot/efi |
 
 ```sh
-# mount /dev/yourpartitionname /mnt
+# mount /dev/yourpartitionname /mnt/home
 # mount /dev/yourpartitionname /mnt
 # swapon /dev/yourpartitionname
 # mount --mkdir /dev/yourpartitionname /mnt/boot
