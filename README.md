@@ -252,3 +252,5 @@ Next generate the GRUB configuration file
 - ### Enable NetworkManager
 
 - ### reboot-poweroff recommendations
+
+recommendations: microcode   tlp   firewall   backup   auto-package-cache-cleaning   fstrim.timer-ssd-cleanup   thermald
