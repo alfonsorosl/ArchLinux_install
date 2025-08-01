@@ -12,7 +12,7 @@ GPT partition table: this file will guide you to create a disk partition with th
 
 First to check your storage device's name input in terminal:
 ```sh
-# lsblk -f
+$ lsblk -f
 ```
 
 ### Create disk partitions
@@ -22,11 +22,11 @@ First to check your storage device's name input in terminal:
 </details>
 
 ```sh
-# gdisk /dev/yourdiskname
+$ gdisk /dev/yourdiskname
 ```
-Replacing `yourdiskname` with the disk name you found in the previous step with `# fdisk -l` or `lsblk`
+Replacing `yourdiskname` with the disk name you found in the previous step with `$ lsblk` or `fdisk -l`
 
-If you want to delete your current disk partitions and data type, at the `gdisk` prompt type `# o` and confirm with `# y`. 
+If you want to delete your current disk partitions and data type, at the `gdisk` prompt type `$ o` and confirm with `$ y`. 
 *If you are working with a clean disk you can skip this step*
 
 Then, still at the `gdisk` prompt, we will create every new partition one by one:
@@ -37,15 +37,15 @@ Then, still at the `gdisk` prompt, we will create every new partition one by one
   <p>Most common size guideline for EFI System Partition is between 100 MB to 550 MB. One of the reason behind this is it is difficult to resize later as it is the first partition on the drive. EFI partition may contain languages, fonts, BIOS firmware, other firmware related stuffs. There are some firmware/software that are installed into the the EFI partition instead of the data drive. The Arch Linux wiki recommends at least 512 MiB to avoid potential issues with some EFIs.</p>
 </details>
   
-Type `# n` to create a new partition
+Type `$ n` to create a new partition
 
 Press `enter` to accept the default partition number or write your preferred number
 
 Press `enter` to accept the default first sector of disk and
 
-Write `# +512MiB` and press `enter` to set the last sector
+Write `$ +512MiB` and press `enter` to set the last sector
 
-Type `# EF00` and press `enter`. This is the specific GUID for an EFI System Partition
+Type `$ EF00` and press `enter`. This is the specific GUID for an EFI System Partition
 
 
 <details>
@@ -59,15 +59,15 @@ Type `# EF00` and press `enter`. This is the specific GUID for an EFI System Par
 - If hibernation is required it is recommended to set the SWAP partition at least as large as the amount of RAM, as the system needs to store the entire contents of RAM in the swap space when hibernating</p>
 </details>
 
-Type `# n` to create a new partition
+Type `$ n` to create a new partition
 
 Press `enter` to accept the default partition number or write your preferred number
 
 Press `enter` to accept the default first sector of disk and
 
-Write `# +4GiB` and press `enter` to set the last sector. (Adjust size based on your RAM; typically RAM size or double RAM for hibernation)
+Write `$ +4GiB` and press `enter` to set the last sector. (Adjust size based on your RAM; typically RAM size or double RAM for hibernation)
 
-Type `# 8200` and press `enter`. This is the GUID for a Linux swap partition
+Type `$ 8200` and press `enter`. This is the GUID for a Linux swap partition
 
 
 <details>
@@ -75,15 +75,15 @@ Type `# 8200` and press `enter`. This is the GUID for a Linux swap partition
   <p>The root partition, denoted as "/", is the primary partition in a Linux system that contains the entire file system structure, including system files, and program settings. Recommended size depends on the operating system, display/window manager, and applications intended to use. Generally at least 40GiB is recommended although lightweight desktop environments might function well with less space</p>
 </details>
 
-Type `# n` to create a new partition
+Type `$ n` to create a new partition
 
 Press `enter` to accept the default partition number or write your preferred number
 
 Press `enter` to accept the default first sector of disk and
 
-Write `# +40GiB` and press `enter` to set the last sector. (You can choose `+20GiB` for minimal, or more like `+50GiB` for more software. Adjust as needed.)
+Write `$ +40GiB` and press `enter` to set the last sector. (You can choose `+20GiB` for minimal, or more like `+50GiB` for more software. Adjust as needed.)
 
-Type `# 8300` and press `enter`. This is the GUID for a Linux filesystem partition (Ext4)
+Type `$ 8300` and press `enter`. This is the GUID for a Linux filesystem partition (Ext4)
 
 
 <details>
@@ -91,7 +91,7 @@ Type `# 8300` and press `enter`. This is the GUID for a Linux filesystem partiti
   <p>A /home partition is a separate section of a hard drive that stores user-specific files and settings. This includes personal documents, photos, videos, browser history, preferences, and application configurations. The /home partition is optional as many systems store this data in the root partition (/) along system files, but this separation can offer several benefits, such as easier system reinstallation, improved data safety, and better organization</p>
 </details>
 
-Type `# n` to create a new partition
+Type `$ n` to create a new partition
 
 Press `enter` to accept the default partition number or write your preferred number
 
@@ -99,15 +99,15 @@ Press `enter` to accept the default first sector of disk and
 
 Just press `enter` to use the remainder of the disk for your home partition
 
-Type `# 8300` and press `enter` to create another Ext4 partition
+Type `$ 8300` and press `enter` to create another Ext4 partition
 
 <p>_</p>
 
-To see the partitions you've created, type `# p` and press `enter`
+To see the partitions you've created, type `$ p` and press `enter`
 
-If the partitions are correct exit the gdisk prompt `# w` and `# y` to exit and save gdisk configuration
+If the partitions are correct exit the gdisk prompt `$ w` and `$ y` to exit and save gdisk configuration
 
-You can check again your disk partitions names with the command `# lsblk` or `# fdisk-l`
+You can check again your disk partitions names with the command `$ lsblk` or `$ fdisk-l`
 
 ### Format disk partitions
 After partitioning the disk you will format all disk partitions using each command accordingly:
@@ -119,15 +119,17 @@ After partitioning the disk you will format all disk partitions using each comma
 |`mkfs.fat -F 32` | /boot/efi |
 
 ```sh
-# mkfs.ext4 /dev/yourpartitionname
-# mkfs.ext4 /dev/yourpartitionname
-# mkswap /dev/yourpartitionname
-# mkfs.fat -F 32 /dev/yourpartitionname
+$ mkfs.ext4 /dev/yourpartitionname
+$ mkfs.ext4 /dev/yourpartitionname
+$ mkswap /dev/yourpartitionname
+$ mkfs.fat -F 32 /dev/yourpartitionname
 ```
 > **WARNING**: *Only format the EFI system partition if you created it during the partitioning step. If there already was an EFI system partition on disk beforehand, reformatting it can destroy the boot loaders of other installed operating systems.*
 
 ### Mount disk partitions
 And mount the disk partitions using each command accordingly:
+
+Note: mount the root parition `/` first as all of the other partitions will be mounted on that `/`partition
 
 |Use | For |
 ---------|----------------
@@ -136,8 +138,8 @@ And mount the disk partitions using each command accordingly:
 |`mount --mkdir`, `/mnt/boot` | /boot/efi |
 
 ```sh
-# mount /dev/yourpartitionname /mnt/home
-# mount /dev/yourpartitionname /mnt
-# swapon /dev/yourpartitionname
-# mount --mkdir /dev/yourpartitionname /mnt/boot
+$ mount /dev/yourpartitionname /mnt/home
+$ mount /dev/yourpartitionname /mnt
+$ swapon /dev/yourpartitionname
+$ mount --mkdir /dev/yourpartitionname /mnt/boot
 ```
