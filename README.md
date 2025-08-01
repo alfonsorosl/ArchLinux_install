@@ -1,5 +1,5 @@
 # ArchLinux_install
-This install of Arch follows instructions from the Installation guide from the ArchWiki, it will only dig deeper in specific steps to expand the understanding of the installation and to help learn more details about the system being installed
+To install Arch follows instructions from the Installation guide from the ArchWiki, this guide will only dig deeper in specific steps to expand the understanding of the installation and to help learn more details about the system being installed
 
 <p align="center">
  <img src="https://github.com/user-attachments/assets/adaf12c2-7bf3-4553-ab7f-f57b1d6c43d8" alt="alt text" width="750" height="422">
@@ -40,7 +40,7 @@ Make sure that the system clock is synchronized and the NTP service is active, t
 
 Next you will partition your disk, check what disks your system has available with the command:
 ```sh
-# fdisk -l
+# lsblk -f
 ```
 <details>
   <summary>Ignore rom, loop or airootfs - rpmb, boot0 and boot1</summary>
