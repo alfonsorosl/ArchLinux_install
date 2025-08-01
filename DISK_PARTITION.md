@@ -1,11 +1,4 @@
 # CREATE DISK PARTITION
-Disk partitioning means dividing your physical storage device into one or more logical sections that can be treated as separate disks
-
-**Why Partition your disk?**
-
-- Organization: separates different type of data for better management
-- Data isolation: if one partition becomes corrupted, data in other partitions may remain safe
-- Flexibility: allows to use different file systems in different partitions e.g. ext4 for root, FAT32 for EFI
 
 GPT partition table: this file will guide you to create a disk partition with the following structure:
 | MOUNT POINT | FILE SYSTEM | SIZE | PURPOSE | ATTRIBUTES |
@@ -15,7 +8,7 @@ GPT partition table: this file will guide you to create a disk partition with th
 |[SWAP] |Linux Swap |6GiB |Swap Space: Used for virtual memory when RAM is full or for hibernation |Swap |
 |/home |Ext4 |Remainder of disk |Home Partition: Stores user files, configurations, and documents |None |
 
-*The /home partition is optional but*
+*The /home partition is optional but recommended for modularity*
 
 First to check your storage device's name input in terminal:
 ```sh
