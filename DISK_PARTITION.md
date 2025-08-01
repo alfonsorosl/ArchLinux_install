@@ -129,7 +129,7 @@ $ mkfs.fat -F 32 /dev/yourpartitionname
 ### Mount disk partitions
 And mount the disk partitions using each command accordingly:
 
-Note: mount the root parition `/` first as all of the other partitions will be mounted on that `/`partition
+> **NOTE**: mount the root parition `/` first as all of the other partitions will be mounted on that `/`partition
 
 |Use | For |
 ---------|----------------
