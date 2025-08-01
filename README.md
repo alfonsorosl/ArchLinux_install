@@ -74,24 +74,24 @@ After formating and mounting the newly created partitions you are ready to conti
 ## PACKAGE INSTALL
 - ### Select mirrors
 
-Mirrors are servers replicating the repositories from ArchLinux. These mirrors help reduce load on the main server and provide faster access for users based on their location. You can check the current mirror list with the commad `# cat` or `# less` e.g:
+Mirrors are servers replicating the repositories from ArchLinux. These mirrors help reduce load on the main server and provide faster access for users based on their location. You can check the current mirror list with `cat` or `less` e.g:
 ```sh
-# cat /etc/pacman.d/mirrorlist
+$ cat /etc/pacman.d/mirrorlist
 ```
 <details>
   <summary>Tip</summary>
 
- To exit command `# less` type `# q`
+ To exit `less` type `$ q`
  </details>
 
-You can update the list of mirrors to optimize download speed. To change the mirror servers, you can either manually edit the `/etc/pacman.d/mirrorlist` file using `# nano` or `# vim` or use a tool like `reflector` as follows:
+You can update the list of mirrors to optimize download speed. To change the mirror servers, you can either manually edit the `/etc/pacman.d/mirrorlist` file using a text editor like `nano` or `vim` or use a tool like `reflector` as follows:
 ```sh
-# sudo reflector --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+$ sudo reflector --protocol https --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 The previous command selects the 10 most recently synchronized HTTPS mirrors, sorts them by download speed, and saves the result to the mirror list file.
 If you want to limit the mirrors to specific countries, you can use the `--country` option:
 ```sh
-# sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
+$ sudo reflector --country "Country1,Country2" --latest 10 --sort rate --save /etc/pacman.d/mirrorlist
 ```
 
 - ### Install essential packages
@@ -112,13 +112,16 @@ Additionally these packages can also be considered essential for the system to w
 
 Depending on your hardware you may need additional drivers for your system to recognize and function correctly with the hardware, make sure to check your hardware specifications and check wether it requires additional drivers or firmware not included in `linux-firmware` for example; for hardware bug and security fixes for your cpu you may need to install a microcode updates firmware like `amd-ucode` or `intel-ucode`
 
-Install the previously mentioned packages using the following command: [INSTALL ONLY BASE LINUX AND LINUX FIRMWARE, touch later on other packages]
+Install the previously mentioned packages using the following command: 
 
 ```sh
-# pacstrap -K /mnt base linux linux-firmware networkmanager grub nano sudo
+$ pacstrap -K /mnt base linux linux-firmware networkmanager grub nano sudo
 ```
+> **Note**: Only limited packages can be downloaded from the repository at this level, focus on a basic setup so your system can run after exiting and removing the install image and you can install more packages later
 
 ## CONFIGURE THE SYSTEM
+🔸[**Follow this guide**](SYSTEM_CONFIG.md) **to setup configure the system**
+
 - ### Generate Fstab
 To get needed file systems (like the one used for the boot directory /boot) mounted on startup, generate an fstab (File System Table) file. This step mounts your file systems when your system boots
 ```sh
