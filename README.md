@@ -32,7 +32,7 @@ You will setup Arch now:
 
 Now you are connected to the internet your system should synchronize its clock automatically, systemd-timesyncd is enabled by default, verify that it is correct entering into the console:
 ```sh
-# timedatectl
+$ timedatectl
 ```
 Make sure that the system clock is synchronized and the NTP service is active, this will ensure that your system maintains an accurate time and date. You will setup your timezone later during the system configuration:
 
@@ -40,7 +40,7 @@ Make sure that the system clock is synchronized and the NTP service is active, t
 
 Next you will partition your disk, check what disks your system has available with the command:
 ```sh
-# lsblk -f
+$ lsblk -f
 ```
 <details>
   <summary>Ignore rom, loop or airootfs - rpmb, boot0 and boot1</summary>
