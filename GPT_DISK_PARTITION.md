@@ -1,4 +1,4 @@
-# CREATE DISK PARTITION
+# CREATE GPT DISK PARTITION
 
 GPT partition table: this file will guide you to create a disk partition with the following structure:
 | MOUNT POINT | FILE SYSTEM | SIZE | PURPOSE | ATTRIBUTES |
