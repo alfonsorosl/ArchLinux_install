@@ -12,11 +12,7 @@ GPT partition table: this file will guide you to create a disk partition with th
 
 First to check your storage device's name input in terminal:
 ```sh
-# fdisk -l
-```
-or to check current disk partitions besides the disk name:
-```sh
-# lsblk
+# lsblk -f
 ```
 
 ### Create disk partitions
