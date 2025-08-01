@@ -61,17 +61,13 @@ To partition we need to choose a configuration MBR or GPT.
   - Stores partition information in its first sector, limited to 4 primary partitions and managing disks up to 2 TB
   - The MBR also contains the initial bootloader code, which points to the operating system's boot sector
 
+🔸[**Follow this guide**](MBR_DISK_PARTITION.md) **to setup a MBR layout**
+
 - **GPT** common in more modern UEFI firmware
   - Stores robust partition data with redundancy (copies at both ends of the disk), supporting virtually unlimited partitions and disks of massive sizes (beyond 2 TB)
   - It uses globally unique identifiers (GUIDs) for partitions and stores direct pointers to UEFI bootloader files on a dedicated EFI System Partition (ESP)
 
-🔸[**Follow this guide**](DISK_PARTITION.md) **to setup a GPT layout with the following partitions:**
-| MOUNT POINT | FILE SYSTEM | SIZE | PURPOSE | ATTRIBUTES |
-| ------------|-------------|------|---------|------------|
-|/boot/efi |FAT32 |500MiB |EFI System Partition (ESP): Stores UEFI bootloaders and kernel images|boot, esp|
-|/ |Ext4 |50GiB |Root Partition: Contains the operating system files |None |
-|[SWAP] |Linux Swap |6GiB |Swap Space: Used for virtual memory when RAM is full or for hibernation |Swap |
-|/home |Ext4 |Remainder of disk |Home Partition: Stores user files, configurations, and documents |None |
+🔸[**Follow this guide**](GPT_DISK_PARTITION.md) **to setup a GPT layout**
 
 After formating and mounting the newly created partitions you are ready to continue to the next step.
 
