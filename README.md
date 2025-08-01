@@ -48,6 +48,14 @@ $ lsblk -f
   <p>For mmcblk devices you may ignore "rpmb" is a small partition that can only be accessed via a trusted mechanism. It is used for secure storage, "boot0" and "boot1" are hardware partitions used for the boot process.</p>
 </details>
 
+Disk partitioning means dividing your physical storage device into one or more logical sections that can be treated as separate disks
+
+Why Partition your disk?
+- Organization: separates different type of data for better management
+- Data isolation: if one partition becomes corrupted, data in other partitions may remain safe
+- Flexibility: allows to use different file systems in different partitions e.g. ext4 for root, FAT32 for EFI
+- Modularity: facilitates backing-up and reinstating your /home directories in with a different operating system
+
 To partition we need to choose a configuration MBR or GPT. 
 - **MBR** usually used in BIOS systems
   - Stores partition information in its first sector, limited to 4 primary partitions and managing disks up to 2 TB
