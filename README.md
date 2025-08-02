@@ -1,5 +1,5 @@
 # ArchLinux_install
-To install Arch follows instructions from the Installation guide from the ArchWiki, this guide will only dig deeper in specific steps to expand the understanding of the installation and to help learn more details about the system being installed
+To install Arch follow instructions from the Installation guide from the ArchWiki, this guide will only dig deeper in specific steps to expand the understanding of the installation and to help learn more details about the system being installed
 
 <p align="center">
  <img src="https://github.com/user-attachments/assets/adaf12c2-7bf3-4553-ab7f-f57b1d6c43d8" alt="alt text" width="750" height="422">
