@@ -1,6 +1,6 @@
 # Configure the System
 
-In this step you prepare the system to leave the install environment and remove the iso image, after this you will have your operating system working standalone with your hardware
+In this step you prepare the system to leave the install environment and remove the iso image, after this you will have your operating system working standalone with your hardware. (Do not remove the iso image until after you complete the configuration)
 
 - ### Generate Fstab
 To get needed file systems (like the one used for the boot directory /boot) mounted on startup, generate an fstab (File System Table) file. This step mounts your file systems when your system boots
@@ -133,9 +133,62 @@ $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
 - ### Create user and password
+You can use your system as the root user, however it is highly recommended to create a separate user, it brings a layer of security in case someone uses your system so it will not make changes in the core system, also having a user will make everyday use of the system more familiar as you will always start in your user directories (Desktop, Documents, Downloads, etc)
+
+To add a new user:
+```sh
+$ useradd -m -g users -G wheel,storage,power -s /bin/bash yourusername
+```
+(Replace `yourusername` with your desired username).
+- m: Creates the user's home directory.
+- g users: Sets the primary group to users.
+- G wheel,storage,power: Adds the user to the wheel, storage, and power groups. The wheel group is important for sudo.
+- s /bin/bash: Sets the default shell to Bash.
+
+Now set the password for your user:
+```sh
+$ passwd yourusername
+```
+Enter your password twice (your password might not be visible in the screen for privacy)
 
 - ### Enable sudo
+Sudo will allow you to make core changes to the system's configuration from your user (no need to exit to the root user) this will simplify your work when working on directories which your user doesn't have permission to change, sudo will ask you for user password when executing commands so an unathorized person cannot change your directories.
+
+Edit the sudoers file using visudo. This is a special command that opens the file safely with nano (or your preferred editor) and checks for syntax errors before saving
+```sh
+$ EDITOR=nano visudo
+```
+Uncomment the line
+```sh
+%wheel ALL=(ALL:ALL) ALL
+```
+This allows members of the wheel `group` to use `sudo`. Save and exit
+
+> *Note* : *If you create an user that you do not want to have sudo priviledges, simply do not add them to the wheel group with the -G option while creating the user*
 
 - ### Enable NetworkManager
+If you installed `networkmanager` to manage your connections is important to enable it so your systemn connects automatically after you reboot
+```sh
+$ systemctl enable NetworkManager
+```
+
+> **Tip** : **is recommended to install network-manager or iwd or systemd-networkd or other daemon that manages network configurations now before you reboot, otherwise you will not be able to connect your system to the internet and any package download that you require will have to be done on a separate machine and transfered to your newly created arch system by a hard memory device
 
 - ### reboot
+Now your system is fully configured and ready to be rebooted to work standalone. It is recommended that you double check against the ArchWiki all the steps and ensure you have completed all so that you ensure you have a functional system once you reboot
+
+Once you have double-checked, just 3 more commands
+
+Exit the chroot environment
+```sh
+$ exit
+```
+Unmount your partitions
+```sh
+$ umount -R /mnt
+```
+And reboot your system
+```sh
+$ reboot
+```
+CONGRATULATIONS!
