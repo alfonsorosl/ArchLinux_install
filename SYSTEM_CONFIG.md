@@ -1,5 +1,7 @@
 # Configure the System
 
+In this step you prepare the system to leave the install environment and remove the iso image, after this you will have your operating system working standalone with your hardware
+
 - ### Generate Fstab
 To get needed file systems (like the one used for the boot directory /boot) mounted on startup, generate an fstab (File System Table) file. This step mounts your file systems when your system boots
 ```sh
