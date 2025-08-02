@@ -128,6 +128,6 @@ This process is what distinguishes an Arch Linux installation and allows for the
 
 🔸[**Follow this guide**](SYSTEM_CONFIG.md) **to setup configure the system**
 
-### recommendations: 
+## FINAL RECOMMENDATIONS: 
 
 microcode   tlp   firewall   backup   auto-package-cache-cleaning   fstrim.timer-ssd-cleanup   thermald
