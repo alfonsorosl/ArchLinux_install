@@ -1,4 +1,4 @@
-## Configure the System
+# Configure the System
 
 - ### Generate Fstab
 To get needed file systems (like the one used for the boot directory /boot) mounted on startup, generate an fstab (File System Table) file. This step mounts your file systems when your system boots
