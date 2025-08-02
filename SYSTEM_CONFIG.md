@@ -175,7 +175,7 @@ $ systemctl enable NetworkManager
 > **Tip** : **is recommended to install network-manager or iwd or systemd-networkd or other daemon that manages network configurations now before you reboot, otherwise you will not be able to connect your system to the internet and any package download that you require will have to be done on a separate machine and transfered to your newly created arch system by a hard memory device
 
 - ### reboot
-Now your system is fully configured and ready to be rebooted to work standalone. It is recommended that you double check against the ArchWiki all the steps and ensure you have completed all so that you ensure you have a functional system once you reboot
+Now your system is fully configured and ready to be rebooted to work standalone. It is recommended that you double check against the [ArchWiki](https://wiki.archlinux.org/title/Installation_guide#Configure_the_system) all the steps and ensure you have completed all so that you ensure you have a functional system once you reboot
 
 Once you have double-checked, just 3 more commands
 
