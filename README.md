@@ -131,3 +131,20 @@ This process is what distinguishes an Arch Linux installation and allows for the
 ## FINAL RECOMMENDATIONS: 
 
 microcode   tlp   firewall   backup   auto-package-cache-cleaning   fstrim.timer-ssd-cleanup   thermald
+
+Connecting to Wi-Fi:
+You can use nmtui (text-based) or nmcli (command-line):
+
+Using nmtui (Recommended for first Wi-Fi connection):
+    Bash
+
+`nmtui`
+
+Select "Activate a connection", choose your Wi-Fi network from the list, enter the password, and activate it. nmtui is very user-friendly.
+
+Using nmcli:
+```sh
+$ nmcli device wifi rescan        # Rescan for Wi-Fi networks
+$ nmcli device wifi list          # List available Wi-Fi networks
+$ nmcli device wifi connect "Your_SSID" password "Your_Wi-Fi_Password"
+```
