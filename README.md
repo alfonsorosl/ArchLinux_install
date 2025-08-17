@@ -1,29 +1,33 @@
 # ArchLinux_install
 To install Arch follow instructions from the Installation guide from the ArchWiki, this guide will only dig deeper in specific steps to expand the understanding of the installation and to help learn more details about the system being installed
 
+<div align="center">
+        
 <pre>
         
-                                                               -`   
-                                                              .o+`                                                                        
-                                                             `ooo/                                                                          
-                                                            `+oooo:                              
-                                                           `+oooooo:                                                         
-                                                           -+oooooo+:                                                                    
-                                                         `/:-:++oooo+:                                                                     
-                                                        `/++++/+++++++:                                                                         
-                                                       `/++++++++++++++:                                     
-                                                      `/+++ooooooooooooo/`                                                                         
-                                                     ./ooosssso++osssssso+`                                                                     
-                                                    .oossssso-````/ossssss+`                                                   
-                                                   -osssssso.      :ssssssso.                                           
-                                                  :osssssss/        osssso+++.                                   
-                                                 /ossssssss/        +ssssooo/-                                                               
-                                               `/ossssso+/:-        -:/+osssso+-                                                        
-                                              `+sso+:-`                 `.-/+oso:                                            
-                                             `++:.                           `-/+/                                 
-                                             .`                                 `/
+-`
+.o+`
+`ooo/
+`+oooo:
+`+oooooo:
+-+oooooo+:
+`/:-:++oooo+:
+`/++++/+++++++:
+`/++++++++++++++:
+`/+++ooooooooooooo/`
+./ooosssso++osssssso+`
+.oossssso-````/ossssss+`
+-osssssso.      :ssssssso.
+:osssssss/        osssso+++.
+/ossssssss/        +ssssooo/-
+`/ossssso+/:-        -:/+osssso+-
+`+sso+:-`                 `.-/+oso:
+`++:.                           `-/+/
+.`                                 `/
 
 </pre>
+
+</div>
 Welcome to this simple guide to install Arch Linux
 
 *Recomendation: follow the official installation guide from the Archwiki > https://wiki.archlinux.org/title/Installation_guide#*
