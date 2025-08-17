@@ -4,7 +4,7 @@ To install Arch follow instructions from the Installation guide from the ArchWik
 <div align="center">
         
 <pre>
-        
+
 -`
 .o+`
 `ooo/
