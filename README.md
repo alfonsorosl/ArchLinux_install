@@ -154,21 +154,16 @@ This process is what distinguishes an Arch Linux installation and allows for the
 
 ## FINAL RECOMMENDATIONS: 
 
-microcode   tlp   firewall   backup   auto-package-cache-cleaning   fstrim.timer-ssd-cleanup   thermald
+To make best use of your new system efficiently and safely I leave the following optional guides.
 
-Connecting to Wi-Fi:
-You can use nmtui (text-based) or nmcli (command-line):
+[**Connecting to Wi-Fi:**](CONNECT_WIFI_networkmanager.md)
 
-Using nmtui (Recommended for first Wi-Fi connection):
-    Bash
+[**Microcode:**](Microcode.md)
 
-`nmtui`
+[**Power Management:**](Power_Management.md)
 
-Select "Activate a connection", choose your Wi-Fi network from the list, enter the password, and activate it. nmtui is very user-friendly.
+[**Firewall:**](Firewall.md)
 
-Using nmcli:
-```sh
-$ nmcli device wifi rescan        # Rescan for Wi-Fi networks
-$ nmcli device wifi list          # List available Wi-Fi networks
-$ nmcli device wifi connect "Your_SSID" password "Your_Wi-Fi_Password"
-```
+[**Temperature Management:**](Power_Management.md)
+
+Now all that is left is to install a desktop environment or window manager to create a more user friendly experience and enjoy your personalized and minimalist Arch computer.
