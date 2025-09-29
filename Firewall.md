@@ -4,6 +4,11 @@
 ```bash
 $ sudo pacman -S ufw
 ```
+And enable service:
+```bash
+$ sudo systemctl enable ufw
+$ sudo systemctl start ufw
+```
 
 Once installed, it is advised to configure UFW with a default policy that denies incoming traffic and allows outgoing traffic, which provides a secure baseline.
 ```bash
