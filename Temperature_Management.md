@@ -14,7 +14,7 @@ $ sudo systemctl start thermald
 For optimal performance, a configuration file `/etc/thermald/thermal-conf.xml`
 
 **AMD:**
-To install `amdctl` you will have to use the AUR https://aur.archlinux.org/packages/amdctl . Follow this guide to install AUR packages.
+To install `amdctl` you will have to use the AUR https://aur.archlinux.org/packages/amdctl [**Follow this guide**](USE_AUR_Repositories.md) to install AUR packages.
 
 After installation, it has to be enabled and started to run automatically at boot:
 ```bash
