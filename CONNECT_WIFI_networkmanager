@@ -1,9 +1,8 @@
 You can use nmtui (text-based) or nmcli (command-line):
 
-Using nmtui type in terminal `nmtui` then select “Activate a connection” and follow UI steps.
+Using nmtui: type in terminal `nmtui` then select “Activate a connection” and follow UI steps.
 
 Using nmcli:
-
 ```sh
 $ nmcli device wifi rescan        # Rescan for Wi-Fi networks
 $ nmcli device wifi list          # List available Wi-Fi networks
