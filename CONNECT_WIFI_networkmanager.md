@@ -1,3 +1,9 @@
+# Connect to Wifi using NetworkManager
+
+If you have installed NetworkManager
+```sh
+sudo pacman -S networkmanager
+```
 You can use nmtui (text-based) or nmcli (command-line):
 
 Using nmtui: type in terminal `nmtui` then select “Activate a connection” and follow UI steps.
