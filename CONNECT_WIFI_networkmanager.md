@@ -2,8 +2,14 @@
 
 If you have installed NetworkManager
 ```sh
-sudo pacman -S networkmanager
+sudo pacman -S NetworkManager
 ```
+And enabled
+```bash
+$ sudo systemctl enable NetworkManager
+$ sudo systemctl start NetworkManager
+```
+
 You can use nmtui (text-based) or nmcli (command-line):
 
 Using nmtui: type in terminal `nmtui` then select “Activate a connection” and follow UI steps.
