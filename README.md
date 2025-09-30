@@ -164,6 +164,6 @@ To make best use of your new system efficiently and safely I leave the following
 
 [**Firewall:**](Firewall.md)
 
-[**Temperature Management:**](Power_Management.md)
+[**Temperature Management:**](Temperature_Management.md)
 
 Now all that is left is to install a desktop environment or window manager to create a more user friendly experience and enjoy your personalized and minimalist Arch computer.
