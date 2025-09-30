@@ -1,5 +1,5 @@
-# Power Management TLP
-Power Management: Tool that automatically adjusts various hardware settings to improve energy efficiency without requiring deep technical knowledge. For most users, the default TLP settings are already well-optimized for battery performance, making it a "set and forget" solution.
+# Power Management
+**TLP** is a tool that automatically adjusts various hardware settings to improve energy efficiency without requiring deep technical knowledge. For most users, the default TLP settings are already well-optimized for battery performance, making it a "set and forget" solution.
 ```bash
 $ sudo pacman -S tlp
 ```
