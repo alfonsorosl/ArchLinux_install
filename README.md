@@ -166,4 +166,6 @@ To make best use of your new system efficiently and safely I leave the following
 
 [**Temperature Management:**](Temperature_Management.md)
 
+[**Data Maintenance:**](Data_Maintenance.md)
+
 Now all that is left is to install a desktop environment or window manager to create a more user friendly experience and enjoy your personalized and minimalist Arch computer.
