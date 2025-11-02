@@ -154,7 +154,7 @@ This process is what distinguishes an Arch Linux installation and allows for the
 
 ## FINAL RECOMMENDATIONS: 
 
-To make best use of your new system efficiently and safely I leave the following optional guides.
+To make best use of your new system efficiently and safely I leave the following optional guides. These suggestions give instructions to install and setup packages that will manage your system's security both in terms of hardware care and data protection:
 
 [**Connecting to Wi-Fi:**](CONNECT_WIFI_networkmanager.md)
 
