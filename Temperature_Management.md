@@ -4,7 +4,7 @@ For Intel CPUs `thermald` can be used and for AMD CPUs `amdctl` can be used
 
 **Intel:**
 ```bash
-$ sudo pacman -S intel-ucode
+$ sudo pacman -S thermald
 ```
 After installation, it has to be enabled and started to run automatically at boot:
 ```bash
