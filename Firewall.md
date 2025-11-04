@@ -12,6 +12,6 @@ $ sudo systemctl start ufw
 
 Once installed, it is advised to configure UFW with a default policy that denies incoming traffic and allows outgoing traffic, which provides a secure baseline.
 ```bash
-$ ufw default deny incoming
-$ ufw default allow outgoing
+$ sudo ufw default deny incoming
+$ sudo ufw default allow outgoing
 ```
